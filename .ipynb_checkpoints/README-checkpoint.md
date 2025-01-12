@@ -11,30 +11,30 @@ Because the program was made in part to help me work in my lab it expects some t
 1. Data files are in .xlsx format.
 2. Data is located in a sheet whose name starts with "Basic Calculation", there can only be one sheet with this kind of name.
 3. Control wells must be in every plate, in the same locations and with the same concentrations.
-There is a "data" folder you can download with an example data file (the downloaded template is also made for this).
+There is a "data" folder you can download with an example data file (the downloaded template is also made for this).  
 
-* Open "template.xlsx" and change it for use.
+1. Open "template.xlsx" and change it for use.
 + In "template": write single characters in cells (C - control wells, E - experimental wells).
 + In "concentrations": write concentrations in the cells which were marked as control wells.
 
-* place data files in the "data" folder
+2. Place data files in the "data" folder
 
 ### Running with command line
-* Navigate to the program folder using the command line.
-* Write in command line:
-'''
+1. Navigate to the program folder using the command line.
+2. Write in command line:
+```
 python calculator.py
-'''
+```
 
 ### Running with jupyter lab
-* Navigate to the program folder using the command line.
-* Write in command line:
-'''
+1. Navigate to the program folder using the command line.
+2.  Write in command line:
+```
 jupyter lab
-'''
-* Jupyter lab should launch in your browser (if not, then copy one of the links provided in the terminal).
-* On the left side double click the file named "calculator.ipynb".
-* Up top click the menu "Run" and then "Run All"
+```
+3. Jupyter lab should launch in your browser (if not, then copy one of the links provided in the terminal).
+4. On the left side double click the file named "calculator.ipynb".
+5. Up top click the menu "Run" and then "Run All"
 
 ### Results
 After running the program the results will be generated in .xlsx and .ods files in the program folder.  
@@ -52,20 +52,20 @@ Download calculator.py, calculator.ipynb, template.xlsx, requirements.txt and pu
 Create 2 folders in the program folder and name them "data" and "pictures".
 
 Download required packages. To do this first:  
-* Open a terminal (linux, mac) or command prompt (windows).
-* Navigate to the program folder using "cd" commands. If you put the program folder in your desktop the commands would look like this:
-'''
+1. Open a terminal (linux, mac) or command prompt (windows).
+2. Navigate to the program folder using `cd` commands. If you put the program folder in your desktop the commands could look like this:
+```
 cd Desktop
 cd (your folder name)
-'''
-* When in the folder, write:
-'''
+```
+3. When in the folder, write:
+```
 pip install -r requirements.txt
-'''
+```
 
 (optional) If you want to use the notebook (.ipynb) then download jupyter lab:
-'''
+```
 pip install jupyterlab
-'''
+```
 
 The program is ready for use!
