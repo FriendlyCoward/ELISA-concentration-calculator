@@ -8,10 +8,10 @@ This program fits a graph formula with various parameters to the control well co
 
 ## Program usage
 Because the program was made in part to help me work in my lab it expects some things to work properly:
-1. Data files are in .xlsx format.
-2. Data is located in a sheet whose name starts with "Basic Calculation", there can only be one sheet with this kind of name.
-3. Control wells must be in every plate, in the same locations and with the same concentrations.
-There is a "data" folder you can download with an example data file (the downloaded template is also made for this).  
+* Data files are in .xlsx format.
+* Data is located in a sheet whose name starts with "Basic Calculation", there can only be one sheet with this kind of name.
+* Control wells must be in every plate, in the same locations and with the same concentrations.
+There is a "data" folder you can download with an example data file (the downloaded template is also made for this file).  
 
 1. Open "template.xlsx" and change it for use.
 + In "template": write single characters in cells (C - control wells, E - experimental wells).
