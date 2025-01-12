@@ -51,7 +51,7 @@ Download calculator.py, calculator.ipynb, template.xlsx, requirements.txt and pu
 
 Create 2 folders in the program folder and name them "data" and "pictures".
 
-Download required packages. To do this first:  
+Download required packages. To do this:  
 1. Open a terminal (linux, mac) or command prompt (windows).
 2. Navigate to the program folder using `cd` commands. If you put the program folder in your desktop the commands could look like this:
 ```
