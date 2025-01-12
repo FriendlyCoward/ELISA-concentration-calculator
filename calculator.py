@@ -7,13 +7,13 @@ import scipy.optimize
 from openpyxl import Workbook, load_workbook
 from openpyxl.styles import PatternFill
 
-def control_graph(parameters: (float), graph_name: str, concentration_data, intensity_data):
+def control_graph(parameters: (float), graph_name: str, concentration_data, absorbance_data):
     dummy_data = np.linspace(np.floor(np.min(concentration_data)), np.ceil(np.max(concentration_data)), 5000)
     dummy_model = sigmoid(parameters, dummy_data)
-    plt.plot(concentration_data, intensity_data, marker = ".", linestyle = "None")
+    plt.plot(concentration_data, absorbance_data, marker = ".", linestyle = "None")
     plt.plot(dummy_data, dummy_model)
-    plt.title("Plate well colour intensity based on analyte concentration")
-    plt.ylabel("Colour intensity, A")
+    plt.title("Plate well light absorbance based on analyte concentration")
+    plt.ylabel("Light absorbance, A")
     plt.xlabel("Concentration, log10(ug/ml)")
     plt.grid()
     plt.savefig(f"./pictures/{graph_name}.png")
@@ -25,7 +25,7 @@ def sigmoid(parameters: [float], xdata) -> float:
     y = c / (1 + np.exp(-k * (xdata - x0))) + y0
     return y
 
-# sigmoid_reverse() is for predicting unknown concentrations from color intensity.
+# sigmoid_reverse() is for predicting unknown concentrations from light absorbance.
 def sigmoid_reverse(parameters: [float], ydata) -> float:
     x0, y0, c, k = parameters
     x = x0 - ((np.log((c / (ydata - y0)) - 1)) / k)
@@ -92,20 +92,20 @@ for file in plate_dictionary.keys():
     
 for file in plate_dictionary.keys():
     for plate in plate_dictionary[file].keys():
-        control_wells = pd.DataFrame(columns = ["concentration", "intensity"])
+        control_wells = pd.DataFrame(columns = ["concentration", "absorbance"])
         for row in range(8):
             for column in range(12):
                 if (template_control[row, column] == True):
                     control_wells.loc[len(control_wells), control_wells.columns] = concentrations[row, column], plate_dictionary[file][plate][row, column]
         concentration_data = control_wells["concentration"].to_numpy(copy = True, dtype = "float64")
         concentration_data = np.log10(concentration_data)
-        intensity_data = control_wells["intensity"].to_numpy(copy = True, dtype = "float64")
+        absorbance_data = control_wells["absorbance"].to_numpy(copy = True, dtype = "float64")
     
-        parameter_guess = (np.median(concentration_data), np.median(intensity_data), 1.0, 1.0)
-        parameters, ier = scipy.optimize.leastsq(loss, parameter_guess, args = (concentration_data, intensity_data))
+        parameter_guess = (np.median(concentration_data), np.median(absorbance_data), 1.0, 1.0)
+        parameters, ier = scipy.optimize.leastsq(loss, parameter_guess, args = (concentration_data, absorbance_data))
 
         graph_name = f"{file} {plate}"
-        control_graph(parameters, graph_name, concentration_data, intensity_data)
+        control_graph(parameters, graph_name, concentration_data, absorbance_data)
         
         result_name = plate + "_results"
         dummy_array = np.zeros((8, 12))
