@@ -39,7 +39,9 @@ jupyter lab
 ### Results
 After running the program the results will be generated in .xlsx and .ods files in the program folder.  
 Inside the result file there are sheets for each data file processed.  
+
 Empty cells mean that those wells absorbance values were higher or lower than the maximum or minimum absorbance of control wells. To potentially fix this, start from a higher concentration for control wells (so that the maximum colour intensity would be higher).  
+
 .xlsx file also has coloured cells: green - control wells, red - absorbance over maximum or minimum, yellow - concentration effectively zero.
 Fitted graph pictures are also generated in the pictures folder.
 
