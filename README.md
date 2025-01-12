@@ -1,10 +1,10 @@
 # ELISA concentration calculator
-A program that calculates unknown plate well concentrations based on well colour intensity and known well concentrations
+A program that calculates unknown plate well concentrations based on well light absorbance and known well concentrations
 
 ## Description
 ELISA (Enzyme-Linked ImmunoSorbent Assay) is a type of experiment which uses protein-specific antibodies (conjugated with an enzyme) to detect or quantify proteins (antigens or antibodies) via colourimetry.  
 To calculate the concentrations of analyzed proteins, plate wells with known concentrations are required (control wells).  
-This program fits a graph formula with various parameters to the control well concentrations and their colour intensity and then uses the fitted parameters to calculate unknown well concentrations.  
+This program fits a graph formula with various parameters to the control well concentrations and their light absorbance and then uses the fitted parameters to calculate unknown well concentrations.  
 
 ## Program usage
 Because the program was made in part to help me work in my lab it expects some things to work properly:
@@ -41,7 +41,7 @@ jupyter lab
 After running the program the results will be generated in .xlsx and .ods files in the program folder.  
 Inside the result file there are sheets for each data file processed.  
 
-Empty cells mean that those wells absorbance values were higher or lower than the maximum or minimum absorbance of control wells. To potentially fix this, start from a higher concentration for control wells (so that the maximum colour intensity would be higher).  
+Empty cells mean that those wells absorbance values were higher or lower than the maximum or minimum absorbance of control wells. To potentially fix this, start from a higher concentration for control wells (so that the maximum light absorbance would be higher).  
 
 .xlsx file also has coloured cells: green - control wells, red - absorbance over maximum or minimum, yellow - concentration effectively zero.
 Fitted graph pictures are also generated in the pictures folder.
