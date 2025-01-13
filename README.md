@@ -33,7 +33,7 @@ python calculator.py
 ```
 jupyter lab
 ```
-3. Jupyter lab should launch in your browser (if not, then copy one of the links provided in the terminal).
+3. Jupyter lab should launch in your browser (if not, then ctrl+click one of the links provided in the terminal).
 4. On the left side double click the file named "calculator.ipynb".
 5. Up top click the menu "Run" and then "Run All"
 
