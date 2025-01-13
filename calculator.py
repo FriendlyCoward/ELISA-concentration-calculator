@@ -12,7 +12,7 @@ def control_graph(parameters: (float), graph_name: str, concentration_data, abso
     dummy_model = sigmoid(parameters, dummy_data)
     plt.plot(concentration_data, absorbance_data, marker = ".", linestyle = "None")
     plt.plot(dummy_data, dummy_model)
-    plt.title("Plate well light absorbance based on analyte concentration")
+    plt.title("Plate well light absorbance based on concentration")
     plt.ylabel("Light absorbance, A")
     plt.xlabel("Concentration, log10(ug/ml)")
     plt.grid()
