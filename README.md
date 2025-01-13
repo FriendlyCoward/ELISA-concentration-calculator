@@ -59,7 +59,7 @@ Download required packages. To do this:
 2. Navigate to the program folder using `cd` commands. If you put the program folder in your desktop the commands could look like this:
 ```
 cd Desktop
-cd (your folder name)
+cd my_folder
 ```
 3. When in the folder, write:
 ```
