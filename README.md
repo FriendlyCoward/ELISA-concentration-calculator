@@ -20,12 +20,14 @@ There is a "data" folder you can download with an example data file (the downloa
 
 2. Place data files in the "data" folder
 
-### Running with command line
+### Running with python
 1. Navigate to the program folder using the command line.
 2. Write in command line:
 ```
 python calculator.py
 ```
+OR
+* Instead of going through command line, just double click calculator.py and wait till the terminal closes.
 
 ### Running with jupyter lab
 1. Navigate to the program folder using the command line.
