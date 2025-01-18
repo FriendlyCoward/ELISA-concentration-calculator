@@ -4,6 +4,7 @@ import re
 import matplotlib.pyplot as plt
 import os
 import scipy.optimize
+import sys
 from openpyxl import Workbook, load_workbook
 from openpyxl.styles import PatternFill
 
@@ -154,11 +155,26 @@ pure_template_experimental = np.where(template == "E", True, False)
 if (C_groups == False):
     pass
 elif (C_groups == True and E_groups == False):
-    raise ValueError("There are control well groups, but there are no experimental well groups. Please make sure that for each control group there is an experimental group (example, for C1 there is E1, for C2 there is E2)")
+    try:
+        raise ValueError
+    except ValueError:
+        print("There are control well groups, but there are no experimental well groups. Please make sure that for each control group there is an experimental group (example, for C1 there is E1, for C2 there is E2)")
+        input("Press Enter to close...")
+        sys.exit()
 elif (C_group_amount != E_group_amount):
-    raise ValueError("There is different amount of control and experimental groups. Make sure that for each control group there is an experimental group (example, for C1 there is E1, for C2 there is E2)")
+    try:
+        raise ValueError
+    except ValueError:
+        print("There is different amount of control and experimental groups. Make sure that for each control group there is an experimental group (example, for C1 there is E1, for C2 there is E2)")
+        input("Press Enter to close...")
+        sys.exit()
 elif (highest_group_C != highest_group_E):
-    raise ValueError("Group index names do not match each other. Make sure that the number of a control group matches the experimental group number (example, for C1 there is E1, for C2 there is E2)")
+    try:
+        raise ValueError
+    except ValueError:
+        print("Group index names do not match each other. Make sure that the number of a control group matches the experimental group number (example, for C1 there is E1, for C2 there is E2)")
+        input("Press Enter to close...")
+        sys.exit()
 
 concentrations = concentrations.to_numpy(copy = True)
 
