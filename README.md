@@ -14,7 +14,7 @@ Because the program was made in part to help me work in my lab it expects some t
 
 There is an example template and a "data" folder with example data files.  
 
-1. Open "template.xlsx" and change it for use.
+1. Open "template.ods" and change it for use.
 + In "template": write single characters in cells (C - control wells, E - experimental wells), Groups can be made by also writing a number after the symbol (C1 is control group 1, E1 is experimental group 1). Making experimental groups with one control is fine (C for E1, C for E2, and so on), but if you are using control well groups, then make sure that for each control group there is a matching experimental group (for C1 there is E1, for C2 there is E2, and so on).
 + In "concentrations": write concentrations in the cells which were marked as control wells.
 

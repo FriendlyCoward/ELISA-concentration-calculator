@@ -95,9 +95,9 @@ for file in data_files:
         number_of_plates += 1
 
 # Template data collection section
-template = pd.read_excel("./template.xlsx", sheet_name = "template", header = None, index_col = None, nrows = 8)
+template = pd.read_excel("./template.ods", engine = "odf", sheet_name = "template", header = None, index_col = None, nrows = 8)
 template = template.drop(columns = [12])
-concentrations = pd.read_excel("./template.xlsx", sheet_name = "concentrations", header = None, index_col = None, nrows = 8)
+concentrations = pd.read_excel("./template.ods", engine = "odf", sheet_name = "concentrations", header = None, index_col = None, nrows = 8)
 concentrations = concentrations.drop(columns = [12])
 
 E_templates = {}
